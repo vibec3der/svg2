@@ -1,0 +1,46 @@
+<style>
+  .lunaris-hub { padding: 40px 20px; text-align: center; width: 100%; max-width: 900px; }
+  .lunaris-hub h2 { color: #e9d5ff; font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .lunaris-hub p { color: #9ca3af; margin-bottom: 40px; font-size: 1.1rem; }
+  .button-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+  
+  .lunaris-btn {
+    background: rgba(88, 28, 135, 0.2);
+    border: 1px solid #6b21a8;
+    color: #d8b4fe;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+  }
+  .lunaris-btn:hover { background: #6b21a8; color: white; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); transform: translateY(-2px); }
+  .lunaris-btn.primary { background: #6b21a8; color: white; }
+  .lunaris-btn.primary:hover { background: #9333ea; box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
+  
+  #game-list-output {
+    background: rgba(13, 8, 20, 0.6);
+    border-radius: 12px;
+    padding: 30px;
+    min-height: 200px;
+    border: 1px solid rgba(88, 28, 135, 0.3);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+  }
+</style>
+
+<div class="lunaris-hub">
+  <h2>Game Library</h2>
+  <p>Select a network source to establish a connection.</p>
+  
+  <div class="button-group">
+    <button class="lunaris-btn" onclick="fetchJsonList('https://cdn.jsdelivr.net/gh/freebuisness/assets@latest/zones.json')">Load Zones</button>
+    <button class="lunaris-btn" onclick="fetchJsonList('UGS.json')">Load UGS Local</button>
+    <button class="lunaris-btn primary" onclick="loadLuminSDK()">Launch Lumin SDK</button>
+  </div>
+
+  <div id="game-list-output">
+    <p style="color: #6b7280; font-style: italic; margin-top: 80px;">Awaiting connection...</p>
+  </div>
+</div>
